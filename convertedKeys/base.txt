@@ -1,10 +1,4 @@
 var baseVertices = [
-]
-var baseVertices = [
-]
-var baseVertices = [
-]
-var baseVertices = [
 -0.989812, 0.456548, -0.005, 1.0, 
 0.989298, 0.456548, -0.005, 1.0, 
 -0.989812, 0.456548, -0.03, 1.0, 
