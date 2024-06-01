@@ -146,7 +146,7 @@
 
       // Normal matrix
       var normalMatrix = mat4.create();
-      var uNormalMatrixPtr = gl.getUniformLocation(program,"uNormalMatrix");
+      //var uNormalMatrixPtr = gl.getUniformLocation(program,"uNormalMatrix");
       mat4.invert(normalMatrix, modelMatrix);
       mat4.transpose(normalMatrix, normalMatrix);
       gl.uniformMatrix4fv(uNormalMatrixPtr, false, new Float32Array(normalMatrix));
@@ -207,11 +207,17 @@
       var normals = [
         // Normal of each vertex
         0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, // Front face
+        0.0,0.0,1.0,0.0,
         0.0, 0.0, -1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, -1.0, 0.0, // Back face
+        0.0, 0.0, -1.0, 0.0,
         0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, // Top face
+        0.0, 1.0, 0.0, 0.0,
         0.0, -1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, // Bottom face
+        0.0, -1.0, 0.0, 0.0,
         1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, // Right face
-        -1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0 // Left face
+        1.0, 0.0, 0.0, 0.0,
+        -1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0, -1.0, 0.0, 0.0, 0.0 ,// Left face
+        -1.0,0.0,0.0,0.0
       ];
 
       // Buffer creation
