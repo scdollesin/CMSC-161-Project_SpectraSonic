@@ -54,6 +54,1100 @@
     var previousMouseY;
     var isDragging = false;
 
+var key5Vertices = [
+-0.3216,0.285,0.0,1.0,
+-0.3216,-0.127,0.0,1.0,
+-0.3176,-0.145,0.0,1.0,
+-0.3056,-0.159,0.0,1.0,
+-0.2856,-0.163,0.0,1.0,
+-0.2856,-0.163,0.0,1.0,
+-0.2856,-0.478,0.0,1.0,
+-0.4176,-0.478,0.0,1.0,
+-0.4176,-0.163,0.0,1.0,
+-0.4016,-0.16,0.0,1.0,
+-0.3876,-0.147,0.0,1.0,
+-0.3836,-0.128,0.0,1.0,
+-0.3836,0.285,0.0,1.0,
+-0.3216,0.285,0.03,1.0,
+-0.3216,-0.127,0.03,1.0,
+-0.3176,-0.145,0.03,1.0,
+-0.3056,-0.159,0.03,1.0,
+-0.2856,-0.163,0.02981,1.0,
+-0.2856,-0.163,0.03,1.0,
+-0.2856,-0.478,0.03,1.0,
+-0.4176,-0.478,0.03,1.0,
+-0.4176,-0.163,0.03,1.0,
+-0.4016,-0.16,0.03,1.0,
+-0.3876,-0.147,0.03,1.0,
+-0.3836,-0.128,0.03,1.0,
+-0.3836,0.285,0.03,1.0
+];
+
+var key5Normals =[];
+
+var key5Indices = [
+5.0,4.0,6.0,
+18.0,19.0,17.0,
+7.0,19.0,6.0,
+8.0,20.0,7.0,
+1.0,13.0,0.0,
+9.0,21.0,8.0,
+2.0,14.0,1.0,
+10.0,22.0,9.0,
+3.0,15.0,2.0,
+11.0,23.0,10.0,
+3.0,17.0,16.0,
+12.0,24.0,11.0,
+4.0,18.0,17.0,
+12.0,13.0,0.0,
+6.0,18.0,5.0,
+6.0,17.0,19.0,
+20.0,22.0,16.0,
+9.0,7.0,3.0,
+7.0,20.0,19.0,
+8.0,21.0,20.0,
+1.0,14.0,13.0,
+9.0,22.0,21.0,
+2.0,15.0,14.0,
+10.0,23.0,22.0,
+3.0,16.0,15.0,
+11.0,24.0,23.0,
+3.0,4.0,17.0,
+12.0,25.0,24.0,
+4.0,5.0,18.0,
+12.0,25.0,13.0,
+6.0,19.0,18.0,
+6.0,4.0,17.0,
+24.0,25.0,14.0,
+25.0,13.0,14.0,
+23.0,24.0,15.0,
+24.0,14.0,15.0,
+20.0,21.0,22.0,
+22.0,23.0,16.0,
+23.0,15.0,16.0,
+16.0,18.0,19.0,
+19.0,20.0,16.0,
+1.0,0.0,12.0,
+1.0,12.0,11.0,
+2.0,1.0,11.0,
+2.0,11.0,10.0,
+6.0,5.0,3.0,
+3.0,2.0,10.0,
+9.0,8.0,7.0,
+3.0,10.0,9.0,
+7.0,6.0,3.0
+];
+
+var key2Vertices = [
+-0.744,0.285,0.0,1.0,
+-0.744,-0.127,0.0,1.0,
+-0.74,-0.145,0.002476,1.0,
+-0.728,-0.159,0.0,1.0,
+-0.708,-0.163,0.0,1.0,
+-0.708,-0.163,0.0,1.0,
+-0.708,-0.478,0.0,1.0,
+-0.84,-0.478,0.0,1.0,
+-0.84,-0.163,0.0,1.0,
+-0.824,-0.16,0.0,1.0,
+-0.81,-0.147,0.0,1.0,
+-0.806,-0.128,0.0,1.0,
+-0.806,0.285,0.0,1.0,
+-0.744,0.285,0.03,1.0,
+-0.744,-0.127,0.03,1.0,
+-0.74,-0.145,0.03,1.0,
+-0.728,-0.159,0.03,1.0,
+-0.708,-0.163,0.02981,1.0,
+-0.708,-0.163,0.03,1.0,
+-0.708,-0.478,0.03,1.0,
+-0.84,-0.478,0.03,1.0,
+-0.84,-0.163,0.03,1.0,
+-0.824,-0.16,0.03,1.0,
+-0.81,-0.147,0.03,1.0,
+-0.806,-0.128,0.03,1.0,
+-0.806,0.285,0.03,1.0
+];
+
+var key2Normals = [
+
+];
+
+var key2Indices = [
+5.0,4.0,6.0,
+18.0,19.0,17.0,
+7.0,19.0,6.0,
+8.0,20.0,7.0,
+1.0,13.0,0.0,
+9.0,21.0,8.0,
+2.0,14.0,1.0,
+10.0,22.0,9.0,
+2.0,16.0,15.0,
+11.0,23.0,10.0,
+4.0,16.0,3.0,
+12.0,24.0,11.0,
+4.0,18.0,17.0,
+12.0,13.0,0.0,
+6.0,18.0,5.0,
+4.0,19.0,6.0,
+20.0,22.0,16.0,
+9.0,7.0,3.0,
+7.0,20.0,19.0,
+8.0,21.0,20.0,
+1.0,14.0,13.0,
+9.0,22.0,21.0,
+2.0,15.0,14.0,
+10.0,23.0,22.0,
+2.0,3.0,16.0,
+11.0,24.0,23.0,
+4.0,17.0,16.0,
+12.0,25.0,24.0,
+4.0,5.0,18.0,
+12.0,25.0,13.0,
+6.0,19.0,18.0,
+4.0,17.0,19.0,
+24.0,25.0,14.0,
+25.0,13.0,14.0,
+23.0,24.0,15.0,
+24.0,14.0,15.0,
+20.0,21.0,22.0,
+22.0,23.0,16.0,
+23.0,15.0,16.0,
+16.0,18.0,19.0,
+19.0,20.0,16.0,
+1.0,0.0,12.0,
+1.0,12.0,11.0,
+2.0,1.0,11.0,
+2.0,11.0,10.0,
+6.0,5.0,3.0,
+3.0,2.0,10.0,
+9.0,8.0,7.0,
+3.0,10.0,9.0,
+7.0,6.0,3.0
+
+];
+
+var key4Vertices = [
+  -0.558, 0.285, 0.0, 1.0, 
+  -0.558, -0.478, 0.0, 1.0, 
+  -0.427, -0.478, 0.0, 1.0, 
+  -0.428, -0.163, 0.0, 1.0, 
+  -0.467, -0.16, 0.0, 1.0, 
+  -0.485, -0.149, 0.0, 1.0, 
+  -0.492, -0.132, 0.0, 1.0, 
+  -0.492, 0.285, 0.0, 1.0, 
+  -0.558, 0.285, 0.03, 1.0, 
+  -0.558, -0.478, 0.03, 1.0, 
+  -0.427, -0.478, 0.03, 1.0, 
+  -0.428, -0.163, 0.03, 1.0, 
+  -0.467, -0.16, 0.03, 1.0, 
+  -0.485, -0.149, 0.03, 1.0, 
+  -0.492, -0.132, 0.03, 1.0, 
+  -0.492, 0.285, 0.03, 1.0, 
+    ];
+
+var key4Normals =[
+
+];
+
+var key4Indices =[
+4.0,11.0,3.0,
+2.0,9.0,1.0,
+7.0,14.0,6.0,
+5.0,12.0,4.0,
+3.0,10.0,2.0,
+1.0,8.0,0.0,
+7.0,8.0,0.0,
+6.0,13.0,5.0,
+5.0,4.0,1.0,
+9.0,13.0,14.0,
+4.0,12.0,11.0,
+2.0,10.0,9.0,
+7.0,15.0,14.0,
+5.0,13.0,12.0,
+3.0,11.0,10.0,
+1.0,9.0,8.0,
+7.0,15.0,8.0,
+6.0,14.0,13.0,
+1.0,0.0,6.0,
+0.0,7.0,6.0,
+3.0,2.0,4.0,
+2.0,1.0,4.0,
+1.0,6.0,5.0,
+15.0,8.0,14.0,
+8.0,9.0,14.0,
+9.0,10.0,12.0,
+10.0,11.0,12.0,
+9.0,12.0,13.0
+
+];
+
+var key7Vertices =[
+-0.006,0.285,0.0,1.0,
+-0.006,-0.478,0.0,1.0,
+-0.136,-0.478,0.0,1.0,
+-0.136,-0.163,0.0,1.0,
+-0.099,-0.161,0.0,1.0,
+-0.083,-0.154,0.0,1.0,
+-0.074,-0.141,0.0,1.0,
+-0.074,0.285,0.0,1.0,
+-0.006,0.285,0.03,1.0,
+-0.006,-0.478,0.03,1.0,
+-0.136,-0.478,0.03,1.0,
+-0.136,-0.163,0.03,1.0,
+-0.099,-0.161,0.03,1.0,
+-0.083,-0.154,0.03,1.0,
+-0.074,-0.141,0.03,1.0,
+-0.074,0.285,0.03,1.0
+];
+var key7Normals = [
+
+];
+var key7Indices = [
+7.0,14.0,6.0,
+5.0,12.0,4.0,
+3.0,10.0,2.0,
+1.0,8.0,0.0,
+7.0,8.0,0.0,
+6.0,13.0,5.0,
+4.0,11.0,3.0,
+2.0,9.0,1.0,
+9.0,13.0,14.0,
+5.0,4.0,1.0,
+7.0,15.0,14.0,
+5.0,13.0,12.0,
+3.0,11.0,10.0,
+1.0,9.0,8.0,
+7.0,15.0,8.0,
+6.0,14.0,13.0,
+4.0,12.0,11.0,
+2.0,10.0,9.0,
+15.0,8.0,14.0,
+8.0,9.0,14.0,
+9.0,10.0,12.0,
+10.0,11.0,12.0,
+9.0,12.0,13.0,
+1.0,0.0,6.0,
+0.0,7.0,6.0,
+3.0,2.0,4.0,
+2.0,1.0,4.0,
+1.0,6.0,5.0
+];
+
+
+
+var key6Vertices =[
+-0.232,0.285,0.0,1.0,
+-0.232,-0.124,0.0,1.0,
+-0.233,-0.139,0.0,1.0,
+-0.233,-0.139,0.0,1.0,
+-0.241,-0.153,0.0,1.0,
+-0.256,-0.16,0.0,1.0,
+-0.277,-0.163,0.0,1.0,
+-0.277,-0.478,0.0,1.0,
+-0.145,-0.478,0.0,1.0,
+-0.145,-0.163,0.0,1.0,
+-0.16,-0.156,0.0,1.0,
+-0.17,-0.143,0.0,1.0,
+-0.173,-0.126,0.0,1.0,
+-0.173,0.285,0.0,1.0,
+-0.232,0.285,0.03,1.0,
+-0.232,-0.124,0.03,1.0,
+-0.233,-0.139,0.03,1.0,
+-0.233,-0.139,0.03,1.0,
+-0.241,-0.153,0.03,1.0,
+-0.256,-0.16,0.03,1.0,
+-0.277,-0.163,0.03,1.0,
+-0.277,-0.478,0.03,1.0,
+-0.145,-0.478,0.03,1.0,
+-0.145,-0.163,0.03,1.0,
+-0.16,-0.156,0.03,1.0,
+-0.17,-0.143,0.03,1.0,
+-0.173,-0.126,0.03,1.0,
+-0.173,0.285,0.03,1.0
+];
+var key6Normals =[
+
+];
+var key6Indices = [
+10.0,23.0,9.0,
+2.0,17.0,16.0,
+11.0,24.0,10.0,
+4.0,17.0,3.0,
+12.0,25.0,11.0,
+5.0,18.0,4.0,
+13.0,26.0,12.0,
+6.0,19.0,5.0,
+13.0,14.0,0.0,
+7.0,20.0,6.0,
+8.0,21.0,7.0,
+1.0,14.0,0.0,
+9.0,22.0,8.0,
+2.0,15.0,1.0,
+15.0,16.0,17.0,
+3.0,2.0,1.0,
+10.0,24.0,23.0,
+2.0,3.0,17.0,
+11.0,25.0,24.0,
+4.0,18.0,17.0,
+12.0,26.0,25.0,
+5.0,19.0,18.0,
+13.0,27.0,26.0,
+6.0,20.0,19.0,
+13.0,27.0,14.0,
+7.0,21.0,20.0,
+8.0,22.0,21.0,
+1.0,15.0,14.0,
+9.0,23.0,22.0,
+2.0,16.0,15.0,
+27.0,14.0,15.0,
+26.0,27.0,15.0,
+25.0,26.0,17.0,
+26.0,15.0,17.0,
+24.0,25.0,18.0,
+22.0,23.0,19.0,
+23.0,24.0,19.0,
+20.0,21.0,19.0,
+21.0,22.0,19.0,
+25.0,17.0,18.0,
+18.0,19.0,24.0,
+1.0,0.0,13.0,
+1.0,13.0,12.0,
+1.0,12.0,3.0,
+12.0,11.0,3.0,
+10.0,9.0,5.0,
+9.0,8.0,5.0,
+11.0,10.0,4.0,
+3.0,11.0,4.0,
+8.0,7.0,5.0,
+7.0,6.0,5.0,
+5.0,4.0,10.0
+];
+
+var key9Vertices =[
+0.244478,0.285,0.0,1.0,
+0.244478,-0.127,0.0,1.0,
+0.248478,-0.145,0.002476,1.0,
+0.260478,-0.159,0.0,1.0,
+0.280478,-0.163,0.0,1.0,
+0.280478,-0.163,0.0,1.0,
+0.280478,-0.478,0.0,1.0,
+0.148478,-0.478,0.0,1.0,
+0.148478,-0.163,0.0,1.0,
+0.164478,-0.16,0.0,1.0,
+0.178478,-0.147,0.0,1.0,
+0.182478,-0.128,0.0,1.0,
+0.182478,0.285,0.0,1.0,
+0.244478,0.285,0.03,1.0,
+0.244478,-0.127,0.03,1.0,
+0.248478,-0.145,0.03,1.0,
+0.260478,-0.159,0.03,1.0,
+0.280478,-0.163,0.02981,1.0,
+0.280478,-0.163,0.03,1.0,
+0.280478,-0.478,0.03,1.0,
+0.148478,-0.478,0.03,1.0,
+0.148478,-0.163,0.03,1.0,
+0.164478,-0.16,0.03,1.0,
+0.178478,-0.147,0.03,1.0,
+0.182478,-0.128,0.03,1.0,
+0.182478,0.285,0.03,1.0
+];
+var key9Normals = [
+
+];
+var key9Indices =[
+5.0,4.0,6.0,
+18.0,19.0,17.0,
+7.0,19.0,6.0,
+8.0,20.0,7.0,
+1.0,13.0,0.0,
+9.0,21.0,8.0,
+2.0,14.0,1.0,
+10.0,22.0,9.0,
+2.0,16.0,15.0,
+11.0,23.0,10.0,
+4.0,16.0,3.0,
+12.0,24.0,11.0,
+4.0,18.0,17.0,
+12.0,13.0,0.0,
+6.0,18.0,5.0,
+4.0,19.0,6.0,
+20.0,22.0,16.0,
+9.0,7.0,3.0,
+7.0,20.0,19.0,
+8.0,21.0,20.0,
+1.0,14.0,13.0,
+9.0,22.0,21.0,
+2.0,15.0,14.0,
+10.0,23.0,22.0,
+2.0,3.0,16.0,
+11.0,24.0,23.0,
+4.0,17.0,16.0,
+12.0,25.0,24.0,
+4.0,5.0,18.0,
+12.0,25.0,13.0,
+6.0,19.0,18.0,
+4.0,17.0,19.0,
+24.0,25.0,14.0,
+25.0,13.0,14.0,
+23.0,24.0,15.0,
+24.0,14.0,15.0,
+20.0,21.0,22.0,
+22.0,23.0,16.0,
+23.0,15.0,16.0,
+16.0,18.0,19.0,
+19.0,20.0,16.0,
+1.0,0.0,12.0,
+1.0,12.0,11.0,
+2.0,1.0,11.0,
+2.0,11.0,10.0,
+6.0,5.0,3.0,
+3.0,2.0,10.0,
+9.0,8.0,7.0,
+3.0,10.0,9.0,
+7.0,6.0,3.0
+];
+
+
+var key10Vertices = [
+0.347478,0.285,0.0,1.0,
+0.347478,-0.129,0.0,1.0,
+0.345478,-0.146,0.0,1.0,
+0.335478,-0.155,0.0,1.0,
+0.323478,-0.163,0.0,1.0,
+0.288478,-0.163,0.0,1.0,
+0.288478,-0.478,0.0,1.0,
+0.421478,-0.478,0.0,1.0,
+0.421478,0.285,0.0,1.0,
+0.347478,0.285,0.03,1.0,
+0.347478,-0.129,0.03,1.0,
+0.345478,-0.146,0.03,1.0,
+0.335478,-0.155,0.03,1.0,
+0.323478,-0.163,0.03,1.0,
+0.288478,-0.163,0.03,1.0,
+0.288478,-0.478,0.03,1.0,
+0.421478,-0.478,0.03,1.0,
+0.421478,0.285,0.03,1.0
+];
+var key10Normals =[
+
+];
+var key10Indices =[
+2.0,12.0,3.0,
+8.0,9.0,0.0,
+7.0,17.0,8.0,
+3.0,13.0,4.0,
+4.0,14.0,5.0,
+5.0,15.0,6.0,
+0.0,10.0,1.0,
+1.0,11.0,2.0,
+6.0,16.0,7.0,
+11.0,10.0,16.0,
+7.0,2.0,3.0,
+2.0,11.0,12.0,
+8.0,17.0,9.0,
+7.0,16.0,17.0,
+3.0,12.0,13.0,
+4.0,13.0,14.0,
+5.0,14.0,15.0,
+0.0,9.0,10.0,
+1.0,10.0,11.0,
+6.0,15.0,16.0,
+10.0,9.0,17.0,
+17.0,16.0,10.0,
+16.0,15.0,13.0,
+11.0,16.0,12.0,
+15.0,14.0,13.0,
+13.0,12.0,16.0,
+4.0,5.0,6.0,
+6.0,7.0,4.0,
+7.0,8.0,1.0,
+2.0,7.0,1.0,
+8.0,0.0,1.0,
+3.0,4.0,7.0
+];
+
+var key11Vertices =[
+0.430478,0.285,0.0,1.0,
+0.430478,-0.478,0.0,1.0,
+0.561478,-0.478,0.0,1.0,
+0.560478,-0.163,0.0,1.0,
+0.521478,-0.16,0.0,1.0,
+0.503478,-0.149,0.0,1.0,
+0.496478,-0.132,0.0,1.0,
+0.496478,0.285,0.0,1.0,
+0.430478,0.285,0.03,1.0,
+0.430478,-0.478,0.03,1.0,
+0.561478,-0.478,0.03,1.0,
+0.560478,-0.163,0.03,1.0,
+0.521478,-0.16,0.03,1.0,
+0.503478,-0.149,0.03,1.0,
+0.496478,-0.132,0.03,1.0,
+0.496478,0.285,0.03,1.0
+];
+var key11Normals =[
+
+];
+var key11Indices =[
+4.0,11.0,3.0,
+2.0,9.0,1.0,
+7.0,14.0,6.0,
+5.0,12.0,4.0,
+3.0,10.0,2.0,
+1.0,8.0,0.0,
+7.0,8.0,0.0,
+6.0,13.0,5.0,
+5.0,4.0,1.0,
+9.0,13.0,14.0,
+4.0,12.0,11.0,
+2.0,10.0,9.0,
+7.0,15.0,14.0,
+5.0,13.0,12.0,
+3.0,11.0,10.0,
+1.0,9.0,8.0,
+7.0,15.0,8.0,
+6.0,14.0,13.0,
+1.0,0.0,6.0,
+0.0,7.0,6.0,
+3.0,2.0,4.0,
+2.0,1.0,4.0,
+1.0,6.0,5.0,
+15.0,8.0,14.0,
+8.0,9.0,14.0,
+9.0,10.0,12.0,
+10.0,11.0,12.0,
+9.0,12.0,13.0
+];
+
+
+var key12Vertices =[
+0.666878,0.285,0.0,1.0,
+0.666878,-0.127,0.0,1.0,
+0.670878,-0.145,0.0,1.0,
+0.682878,-0.159,0.0,1.0,
+0.702878,-0.163,0.0,1.0,
+0.702878,-0.163,0.0,1.0,
+0.702878,-0.478,0.0,1.0,
+0.570878,-0.478,0.0,1.0,
+0.570878,-0.163,0.0,1.0,
+0.586878,-0.16,0.0,1.0,
+0.600878,-0.147,0.0,1.0,
+0.604878,-0.128,0.0,1.0,
+0.604878,0.285,0.0,1.0,
+0.666878,0.285,0.03,1.0,
+0.666878,-0.127,0.03,1.0,
+0.670878,-0.145,0.03,1.0,
+0.682878,-0.159,0.03,1.0,
+0.702878,-0.163,0.02981,1.0,
+0.702878,-0.163,0.03,1.0,
+0.702878,-0.478,0.03,1.0,
+0.570878,-0.478,0.03,1.0,
+0.570878,-0.163,0.03,1.0,
+0.586878,-0.16,0.03,1.0,
+0.600878,-0.147,0.03,1.0,
+0.604878,-0.128,0.03,1.0,
+0.604878,0.285,0.03,1.0
+];
+var key12Normals =[
+
+];
+var key12Indices =[
+5.0,4.0,6.0,
+18.0,19.0,17.0,
+7.0,19.0,6.0,
+8.0,20.0,7.0,
+1.0,13.0,0.0,
+9.0,21.0,8.0,
+2.0,14.0,1.0,
+10.0,22.0,9.0,
+3.0,15.0,2.0,
+11.0,23.0,10.0,
+3.0,17.0,16.0,
+12.0,24.0,11.0,
+4.0,18.0,17.0,
+12.0,13.0,0.0,
+6.0,18.0,5.0,
+6.0,17.0,19.0,
+20.0,22.0,16.0,
+9.0,7.0,3.0,
+7.0,20.0,19.0,
+8.0,21.0,20.0,
+1.0,14.0,13.0,
+9.0,22.0,21.0,
+2.0,15.0,14.0,
+10.0,23.0,22.0,
+3.0,16.0,15.0,
+11.0,24.0,23.0,
+3.0,4.0,17.0,
+12.0,25.0,24.0,
+4.0,5.0,18.0,
+12.0,25.0,13.0,
+6.0,19.0,18.0,
+6.0,4.0,17.0,
+24.0,25.0,14.0,
+25.0,13.0,14.0,
+23.0,24.0,15.0,
+24.0,14.0,15.0,
+20.0,21.0,22.0,
+22.0,23.0,16.0,
+23.0,15.0,16.0,
+16.0,18.0,19.0,
+19.0,20.0,16.0,
+1.0,0.0,12.0,
+1.0,12.0,11.0,
+2.0,1.0,11.0,
+2.0,11.0,10.0,
+6.0,5.0,3.0,
+3.0,2.0,10.0,
+9.0,8.0,7.0,
+3.0,10.0,9.0,
+7.0,6.0,3.0
+];
+
+
+
+var key13Vertices =[
+0.756478,0.285,0.0,1.0,
+0.756478,-0.124,0.0,1.0,
+0.755478,-0.139,0.0,1.0,
+0.755478,-0.139,0.0,1.0,
+0.747478,-0.153,0.0,1.0,
+0.732478,-0.16,0.0,1.0,
+0.711478,-0.163,0.0,1.0,
+0.711478,-0.478,0.0,1.0,
+0.843478,-0.478,0.0,1.0,
+0.843478,-0.163,0.0,1.0,
+0.828478,-0.156,0.0,1.0,
+0.818478,-0.143,0.0,1.0,
+0.815478,-0.126,0.0,1.0,
+0.815478,0.285,0.0,1.0,
+0.756478,0.285,0.03,1.0,
+0.756478,-0.124,0.03,1.0,
+0.755478,-0.139,0.03,1.0,
+0.755478,-0.139,0.03,1.0,
+0.747478,-0.153,0.03,1.0,
+0.732478,-0.16,0.03,1.0,
+0.711478,-0.163,0.03,1.0,
+0.711478,-0.478,0.03,1.0,
+0.843478,-0.478,0.03,1.0,
+0.843478,-0.163,0.03,1.0,
+0.828478,-0.156,0.03,1.0,
+0.818478,-0.143,0.03,1.0,
+0.815478,-0.126,0.03,1.0,
+0.815478,0.285,0.03,1.0
+];
+var key13Normals =[
+
+];
+var key13Indices = [
+10.0,23.0,9.0,
+2.0,17.0,16.0,
+11.0,24.0,10.0,
+4.0,17.0,3.0,
+12.0,25.0,11.0,
+5.0,18.0,4.0,
+13.0,26.0,12.0,
+6.0,19.0,5.0,
+13.0,14.0,0.0,
+7.0,20.0,6.0,
+8.0,21.0,7.0,
+1.0,14.0,0.0,
+9.0,22.0,8.0,
+2.0,15.0,1.0,
+15.0,16.0,17.0,
+3.0,2.0,1.0,
+10.0,24.0,23.0,
+2.0,3.0,17.0,
+11.0,25.0,24.0,
+4.0,18.0,17.0,
+12.0,26.0,25.0,
+5.0,19.0,18.0,
+13.0,27.0,26.0,
+6.0,20.0,19.0,
+13.0,27.0,14.0,
+7.0,21.0,20.0,
+8.0,22.0,21.0,
+1.0,15.0,14.0,
+9.0,23.0,22.0,
+2.0,16.0,15.0,
+27.0,14.0,15.0,
+26.0,27.0,15.0,
+25.0,26.0,17.0,
+26.0,15.0,17.0,
+24.0,25.0,18.0,
+22.0,23.0,19.0,
+23.0,24.0,19.0,
+20.0,21.0,19.0,
+21.0,22.0,19.0,
+25.0,17.0,18.0,
+18.0,19.0,24.0,
+1.0,0.0,13.0,
+1.0,13.0,12.0,
+1.0,12.0,3.0,
+12.0,11.0,3.0,
+10.0,9.0,5.0,
+9.0,8.0,5.0,
+11.0,10.0,4.0,
+3.0,11.0,4.0,
+8.0,7.0,5.0,
+7.0,6.0,5.0,
+5.0,4.0,10.0
+];
+
+
+
+
+
+var key8Vertices =[
+0.005593,0.285,0.0,1.0,
+0.005593,-0.478,0.0,1.0,
+0.137593,-0.478,0.0,1.0,
+0.137593,-0.163,0.0,1.0,
+0.101593,-0.16,0.0,1.0,
+0.086593,-0.149,0.0,1.0,
+0.079593,-0.132,0.0,1.0,
+0.079593,0.285,0.0,1.0,
+0.005593,0.285,0.03,1.0,
+0.005593,-0.478,0.03,1.0,
+0.137593,-0.478,0.03,1.0,
+0.137593,-0.163,0.03,1.0,
+0.101593,-0.16,0.03,1.0,
+0.086593,-0.149,0.03,1.0,
+0.079593,-0.132,0.03,1.0,
+0.079593,0.285,0.03,1.0
+];
+var key8Normals =[
+
+];
+var key8Indices =[
+7.0,14.0,6.0,
+5.0,12.0,4.0,
+3.0,10.0,2.0,
+1.0,8.0,0.0,
+7.0,8.0,0.0,
+6.0,13.0,5.0,
+4.0,11.0,3.0,
+2.0,9.0,1.0,
+9.0,13.0,14.0,
+5.0,4.0,1.0,
+7.0,15.0,14.0,
+5.0,13.0,12.0,
+3.0,11.0,10.0,
+1.0,9.0,8.0,
+7.0,15.0,8.0,
+6.0,14.0,13.0,
+4.0,12.0,11.0,
+2.0,10.0,9.0,
+15.0,8.0,14.0,
+8.0,9.0,14.0,
+9.0,10.0,12.0,
+10.0,11.0,12.0,
+9.0,12.0,13.0,
+1.0,0.0,6.0,
+0.0,7.0,6.0,
+3.0,2.0,4.0,
+2.0,1.0,4.0,
+1.0,6.0,5.0
+];
+
+
+
+
+var key14Vertices =[
+0.91,0.285,0.0,1.0,
+0.91,-0.133,0.0,1.0,
+0.906,-0.147,0.0,1.0,
+0.896,-0.158,0.0,1.0,
+0.882,-0.162,0.0,1.0,
+0.847,-0.478,0.0,1.0,
+0.947,-0.478,0.0,1.0,
+0.964,-0.472,0.0,1.0,
+0.964,-0.472,0.0,1.0,
+0.977,-0.457,0.0,1.0,
+0.981,-0.438,0.0,1.0,
+0.981,0.285,0.0,1.0,
+0.847,-0.163,0.0,1.0,
+0.91,0.285,0.03,1.0,
+0.91,-0.133,0.03,1.0,
+0.906,-0.147,0.03,1.0,
+0.896,-0.158,0.03,1.0,
+0.882,-0.162,0.03,1.0,
+0.847,-0.478,0.03,1.0,
+0.947,-0.478,0.03,1.0,
+0.964,-0.472,0.03,1.0,
+0.964,-0.472,0.03,1.0,
+0.977,-0.457,0.03,1.0,
+0.981,-0.438,0.03,1.0,
+0.981,0.285,0.03,1.0,
+0.847,-0.163,0.03,1.0
+];
+var key14Normals =[
+
+];
+var key14Indices = [
+3.0,15.0,2.0,
+11.0,23.0,10.0,
+4.0,16.0,3.0,
+12.0,17.0,4.0,
+5.0,25.0,12.0,
+11.0,13.0,0.0,
+6.0,18.0,5.0,
+7.0,19.0,6.0,
+7.0,21.0,20.0,
+1.0,13.0,0.0,
+9.0,21.0,8.0,
+2.0,14.0,1.0,
+10.0,22.0,9.0,
+19.0,21.0,22.0,
+9.0,7.0,6.0,
+3.0,16.0,15.0,
+11.0,24.0,23.0,
+4.0,17.0,16.0,
+12.0,25.0,17.0,
+5.0,18.0,25.0,
+11.0,24.0,13.0,
+6.0,19.0,18.0,
+7.0,20.0,19.0,
+7.0,8.0,21.0,
+1.0,14.0,13.0,
+9.0,22.0,21.0,
+2.0,15.0,14.0,
+10.0,23.0,22.0,
+24.0,13.0,14.0,
+23.0,24.0,14.0,
+25.0,18.0,17.0,
+18.0,19.0,23.0,
+17.0,18.0,23.0,
+16.0,17.0,23.0,
+23.0,14.0,15.0,
+15.0,16.0,23.0,
+22.0,23.0,19.0,
+19.0,20.0,21.0,
+1.0,0.0,11.0,
+11.0,10.0,1.0,
+10.0,9.0,6.0,
+1.0,10.0,2.0,
+2.0,10.0,3.0,
+3.0,10.0,4.0,
+4.0,10.0,5.0,
+5.0,12.0,4.0,
+5.0,10.0,6.0,
+9.0,8.0,7.0
+];
+
+
+var baseVertices = [
+-0.989812, 0.456548, -0.005, 1.0, 
+0.989298, 0.456548, -0.005, 1.0, 
+-0.989812, 0.456548, -0.03, 1.0, 
+0.989298, 0.456548, -0.03, 1.0, 
+0.989298, 0.29, -0.005, 1.0, 
+-0.989812, 0.29, -0.005, 1.0, 
+-0.953755, -0.48133, -0.005, 1.0, 
+-0.989812, -0.445274, -0.005, 1.0, 
+-0.971784, -0.476499, -0.005, 1.0, 
+-0.984981, -0.463302, -0.005, 1.0, 
+0.989298, -0.445274, -0.005, 1.0, 
+0.953242, -0.48133, -0.005, 1.0, 
+0.984468, -0.463302, -0.005, 1.0, 
+0.97127, -0.476499, -0.005, 1.0, 
+-0.989812, -0.445274, -0.03, 1.0, 
+-0.953755, -0.48133, -0.03, 1.0, 
+-0.984981, -0.463302, -0.03, 1.0, 
+-0.971784, -0.476499, -0.03, 1.0, 
+0.953242, -0.48133, -0.03, 1.0, 
+0.989298, -0.445274, -0.03, 1.0, 
+0.97127, -0.476499, -0.03, 1.0, 
+0.984468, -0.463302, -0.03, 1.0, 
+-0.989812, 0.29, 0.009841, 1.0, 
+-0.939652, 0.29, 0.06, 1.0, 
+-0.983092, 0.29, 0.03492, 1.0, 
+-0.964732, 0.29, 0.05328, 1.0, 
+0.939139, 0.29, 0.06, 1.0, 
+0.989298, 0.29, 0.009841, 1.0, 
+0.964219, 0.29, 0.05328, 1.0, 
+0.982578, 0.29, 0.03492, 1.0, 
+0.989298, 0.456548, 0.009841, 1.0, 
+0.939139, 0.456548, 0.06, 1.0, 
+0.982578, 0.456548, 0.03492, 1.0, 
+0.964219, 0.456548, 0.05328, 1.0, 
+-0.939652, 0.456548, 0.06, 1.0, 
+-0.989812, 0.456548, 0.009841, 1.0, 
+-0.964732, 0.456548, 0.05328, 1.0, 
+-0.983092, 0.456548, 0.03492, 1.0
+];
+var baseNormals = [
+1.0, -0.0, -0.0, 0, 
+-0.0, -0.0, 1.0, 0, 
+-1.0, -0.0, -0.0, 0, 
+-0.0, -1.0, -0.0, 0, 
+-0.0, 1.0, -0.0, 0, 
+-0.9659, 0.2588, -0.0, 0, 
+-0.7071, 0.7071, -0.0, 0, 
+-0.2588, 0.9659, -0.0, 0, 
+0.9659, 0.2588, -0.0, 0, 
+0.7071, 0.7071, -0.0, 0, 
+0.2588, 0.9659, -0.0, 0, 
+-0.0, -0.0, -1.0, 0, 
+0.2588, -0.0, -0.9659, 0, 
+0.7071, -0.0, -0.7071, 0, 
+0.9659, -0.0, -0.2588, 0, 
+-0.2588, -0.0, -0.9659, 0, 
+-0.7071, -0.0, -0.7071, 0, 
+-0.9659, -0.0-0.2588, 0
+];
+var baseIndices = [
+5.0, 14.0, 2.0, 
+3.0, 2.0, 18.0, 
+4.0, 3.0, 19.0, 
+0.0, 3.0, 1.0, 
+11.0, 15.0, 6.0, 
+28.0, 29.0, 27.0, 
+36.0, 37.0, 35.0, 
+4.0, 30.0, 1.0, 
+0.0, 22.0, 5.0, 
+19.0, 12.0, 10.0, 
+21.0, 13.0, 12.0, 
+20.0, 11.0, 13.0, 
+7.0, 16.0, 14.0, 
+9.0, 17.0, 16.0, 
+8.0, 15.0, 17.0, 
+12.0, 13.0, 11.0, 
+23.0, 36.0, 34.0, 
+25.0, 37.0, 36.0, 
+24.0, 35.0, 37.0, 
+31.0, 28.0, 26.0, 
+33.0, 29.0, 28.0, 
+32.0, 27.0, 29.0, 
+23.0, 31.0, 26.0, 
+2.0, 0.0, 5.0, 
+5.0, 7.0, 14.0, 
+2.0, 14.0, 15.0, 
+14.0, 16.0, 15.0, 
+16.0, 17.0, 15.0, 
+15.0, 18.0, 2.0, 
+18.0, 20.0, 19.0, 
+20.0, 21.0, 19.0, 
+19.0, 3.0, 18.0, 
+19.0, 10.0, 4.0, 
+4.0, 1.0, 3.0, 
+0.0, 2.0, 3.0, 
+11.0, 18.0, 15.0, 
+27.0, 4.0, 26.0, 
+4.0, 5.0, 23.0, 
+5.0, 22.0, 23.0, 
+22.0, 24.0, 23.0, 
+24.0, 25.0, 23.0, 
+23.0, 26.0, 4.0, 
+26.0, 28.0, 27.0, 
+35.0, 0.0, 34.0, 
+0.0, 1.0, 31.0, 
+1.0, 30.0, 31.0, 
+30.0, 32.0, 31.0, 
+32.0, 33.0, 31.0, 
+31.0, 34.0, 0.0, 
+34.0, 36.0, 35.0, 
+4.0, 27.0, 30.0, 
+0.0, 35.0, 22.0, 
+19.0, 21.0, 12.0, 
+21.0, 20.0, 13.0, 
+20.0, 18.0, 11.0, 
+7.0, 9.0, 16.0, 
+9.0, 8.0, 17.0, 
+8.0, 6.0, 15.0, 
+11.0, 6.0, 4.0, 
+6.0, 8.0, 7.0, 
+8.0, 9.0, 7.0, 
+7.0, 5.0, 6.0, 
+5.0, 4.0, 6.0, 
+4.0, 10.0, 11.0, 
+10.0, 12.0, 11.0, 
+23.0, 25.0, 36.0, 
+25.0, 24.0, 37.0, 
+24.0, 22.0, 35.0, 
+31.0, 33.0, 28.0, 
+33.0, 32.0, 29.0, 
+32.0, 30.0, 27.0, 
+23.0, 34.0, 31.0
+];
+
+
+
+
+
+
+
+ var key3Vertices = [
+  -0.641, 0.285, 0.0, 1.0, 
+  -0.641, -0.129, 0.0, 1.0, 
+  -0.643, -0.146, 0.0, 1.0, 
+  -0.653, -0.155, 0.0, 1.0, 
+  -0.665, -0.163, 0.0, 1.0, 
+  -0.7, -0.163, 0.0, 1.0, 
+  -0.7, -0.478, 0.0, 1.0, 
+  -0.567, -0.478, 0.0, 1.0, 
+  -0.567, 0.285, 0.0, 1.0, 
+  -0.641, 0.285, 0.03, 1.0, 
+  -0.641, -0.129, 0.03, 1.0, 
+  -0.643, -0.146, 0.03, 1.0, 
+  -0.653, -0.155, 0.03, 1.0, 
+  -0.665, -0.163, 0.03, 1.0, 
+  -0.7, -0.163, 0.03, 1.0, 
+  -0.7, -0.478, 0.03, 1.0, 
+  -0.567, -0.478, 0.03, 1.0, 
+  -0.567, 0.285, 0.03, 1.0
+ ];
+
+ var key3Normals =[
+
+ ];
+ var key3Indices =[
+    2.0,12.0,3.0,
+8.0,9.0,0.0,
+7.0,17.0,8.0,
+3.0,13.0,4.0,
+4.0,14.0,5.0,
+5.0,15.0,6.0,
+0.0,10.0,1.0,
+1.0,11.0,2.0,
+6.0,16.0,7.0,
+11.0,10.0,16.0,
+7.0,2.0,3.0,
+2.0,11.0,12.0,
+8.0,17.0,9.0,
+7.0,16.0,17.0,
+3.0,12.0,13.0,
+4.0,13.0,14.0,
+5.0,14.0,15.0,
+0.0,9.0,10.0,
+1.0,10.0,11.0,
+6.0,15.0,16.0,
+10.0,9.0,17.0,
+17.0,16.0,10.0,
+16.0,15.0,13.0,
+11.0,16.0,12.0,
+15.0,14.0,13.0,
+13.0,12.0,16.0,
+4.0,5.0,6.0,
+6.0,7.0,4.0,
+7.0,8.0,1.0,
+2.0,7.0,1.0,
+8.0,0.0,1.0,
+3.0,4.0,7.0
+ ];
+
+ var key2Normals = [
+  0.669, -0.7433, -0.0, 0, 
+  -0.0, -1.0, -0.0, 0, 
+  -1.0, -0.0, -0.0, 0, 
+  0.5547, -0.832, -0.0, 0, 
+  1.0, -0.0, -0.0, 0, 
+  0.9931, -0.1168, -0.0, 0, 
+  -0.0, 1.0, -0.0, 0, 
+  -0.0, -0.0, -1.0, 0, 
+  -0.0, -0.0, 1.0, 0, 
+  0.5547, -0.8321, -0.0, 0, 
+  0.9932, -0.1168, -0.0, 0
+
+ ];
 
     var key1Vertices =[
     -0.906, 0.285, 0.0, 1.0, 
@@ -81,46 +1175,44 @@
 
     ];
  var key1Indices= [
-      10.0, 2.0, 3.0, 
-      14.0, 15.0, 21.0, 
-      1.0, 13.0, 2.0, 
-      1.0, 22.0, 12.0, 
-      11.0, 21.0, 22.0, 
-      10.0, 20.0, 21.0, 
-      9.0, 19.0, 20.0, 
-      8.0, 18.0, 19.0, 
-      7.0, 17.0, 18.0, 
-      6.0, 16.0, 17.0, 
-      5.0, 15.0, 16.0, 
-      4.0, 14.0, 15.0, 
-      3.0, 13.0, 14.0, 
-      4.0, 5.0, 10.0, 
-      5.0, 6.0, 10.0, 
-      6.0, 7.0, 10.0, 
-      7.0, 8.0, 9.0, 
-      10.0, 7.0, 9.0, 
-      10.0, 11.0, 2.0, 
-      11.0, 1.0, 2.0, 
-      3.0, 4.0, 10.0, 
-      20.0, 21.0, 18.0, 
-      21.0, 22.0, 13.0, 
-      22.0, 12.0, 13.0, 
-      21.0, 13.0, 14.0, 
-      18.0, 21.0, 17.0, 
-      18.0, 19.0, 20.0, 
-      16.0, 17.0, 21.0, 
-      15.0, 16.0, 21.0, 
-      1.0, 12.0, 13.0, 
-      1.0, 11.0, 22.0, 
-      11.0, 10.0, 21.0, 
-      10.0, 9.0, 20.0, 
-      9.0, 8.0, 19.0, 
-      8.0, 7.0, 18.0, 
-      7.0, 6.0, 17.0, 
-      6.0, 5.0, 16.0, 
-      5.0, 4.0, 15.0, 
-      4.0, 3.0, 14.0, 
-      3.0, 2.0, 13.0,
+      19.0, 1.0, 2.0, 
+    13.0, 14.0, 20.0, 
+    0.0, 12.0, 1.0, 
+    0.0, 21.0, 11.0, 
+    10.0, 20.0, 21.0, 
+    9.0, 19.0, 20.0, 
+    8.0, 18.0, 19.0, 
+    7.0, 17.0, 18.0, 
+    6.0, 16.0, 17.0, 
+    5.0, 15.0, 16.0, 
+    4.0, 14.0, 15.0, 
+    2.0, 12.0, 13.0, 
+    3.0, 4.0, 9.0, 
+    4.0, 5.0, 9.0, 
+    5.0, 6.0, 9.0, 
+    6.0, 7.0, 8.0, 
+    9.0, 6.0, 8.0, 
+    9.0, 10.0, 1.0, 
+    10.0, 0.0, 1.0, 
+    2.0, 3.0, 9.0, 
+    19.0, 20.0, 17.0, 
+    20.0, 21.0, 12.0, 
+    21.0, 11.0, 12.0, 
+    20.0, 12.0, 13.0, 
+    17.0, 20.0, 16.0, 
+    17.0, 18.0, 19.0, 
+    15.0, 16.0, 20.0, 
+    14.0, 15.0, 20.0, 
+    0.0, 11.0, 12.0, 
+    0.0, 10.0, 21.0, 
+    10.0, 9.0, 20.0, 
+    9.0, 8.0, 19.0, 
+    8.0, 7.0, 18.0, 
+    7.0, 6.0, 17.0, 
+    6.0, 5.0, 16.0, 
+    5.0, 4.0, 15.0, 
+    4.0, 3.0, 14.0, 
+    2.0, 1.0, 12.0
 
  ];
    var key1Normals = [
@@ -419,9 +1511,9 @@
       mat4.perspective(projectionMatrix, fieldOfViewYAxis, aspectRatio, nearPlane, farPlane);
       gl.uniformMatrix4fv(uProjectionMatrixPointer, false, new Float32Array(projectionMatrix));
 
-      var lookAtPoint = [1.5, 0.0, 0.0, 1.0];
-      var eyePoint = [3.0, 4.0, 5.0, 1.0];
-      var upVector = [0.0, 1.0, 0.0, 0.0];
+      var lookAtPoint = [1, 0.0, 0.0, 1.0];
+      var eyePoint = [3.0, 2.0, 4.0, 1.0];
+      var upVector = [1.0, 1.0, 0.0, 0.0];
 
       var viewMatrix = mat4.create();
       mat4.lookAt(viewMatrix, eyePoint, lookAtPoint, upVector);
@@ -438,9 +1530,15 @@
       mat4.transpose(normalMatrix, normalMatrix);
       gl.uniformMatrix4fv(uNormalMatrixPtr, false, new Float32Array(normalMatrix));
 
+
+
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       var verticesBuffer = gl.createBuffer();
       gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key1Vertices), gl.STATIC_DRAW);
       gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
       gl.enableVertexAttribArray(aPositionPointer);
 
@@ -448,29 +1546,332 @@
 
       var indexBuffer = gl.createBuffer();
       gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
-      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(indices), gl.STATIC_DRAW);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key1Indices), gl.STATIC_DRAW);
 
       var normalBuffer = gl.createBuffer();
       gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(normals), gl.STATIC_DRAW);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key1Normals), gl.STATIC_DRAW);
       gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
       gl.enableVertexAttribArray(aNormalPointer);
 
       // Draw the cube
       gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
-      gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_BYTE, 0);
-    
-            var vertices2Buffer = gl.createBuffer();
-      gl.bindBuffer(gl.ARRAY_BUFFER, vertices2Buffer);
-      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices2), gl.STATIC_DRAW);
+      gl.drawElements(gl.TRIANGLES, key1Indices.length, gl.UNSIGNED_BYTE, 0);
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ///////////////////
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+      var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key2Vertices), gl.STATIC_DRAW);
       gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
       gl.enableVertexAttribArray(aPositionPointer);
 
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key2Indices), gl.STATIC_DRAW);
 
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key2Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key2Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+
+      var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key3Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
 
       var indexBuffer = gl.createBuffer();
       gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
-      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(indices), gl.STATIC_DRAW);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key3Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key3Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key3Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+      var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key4Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key4Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key4Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key4Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+     var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key5Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key5Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key5Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key5Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+    var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key6Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key6Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key6Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key6Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+    var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key7Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key7Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key7Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key7Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+
+    var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key8Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key8Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key8Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key8Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+      var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key9Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key9Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key9Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key9Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+
+
+      var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key10Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key10Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key10Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key10Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+
+      var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key11Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key11Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key11Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key11Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+      var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key12Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key12Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key12Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key12Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+
+      var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key13Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key13Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key13Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key13Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+
+
+      var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key14Vertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key14Indices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key14Normals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, key14Indices.length, gl.UNSIGNED_BYTE, 0);
+
+
+      var verticesBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, verticesBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(baseVertices), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aPositionPointer);
+
+      var indexBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(baseIndices), gl.STATIC_DRAW);
+
+      var normalBuffer = gl.createBuffer();
+      gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(baseNormals), gl.STATIC_DRAW);
+      gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(aNormalPointer);
+
+      // Draw the cube
+      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      gl.drawElements(gl.TRIANGLES, baseIndices.length, gl.UNSIGNED_BYTE, 0);
+      //       var vertices2Buffer = gl.createBuffer();
+      // gl.bindBuffer(gl.ARRAY_BUFFER, vertices2Buffer);
+      // gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices2), gl.STATIC_DRAW);
+      // gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      // gl.enableVertexAttribArray(aPositionPointer);
+
+
+
+      // var indexBuffer = gl.createBuffer();
+      // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      // gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(indices), gl.STATIC_DRAW);
 
       // var normalBuffer = gl.createBuffer();
       // gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
@@ -478,10 +1879,35 @@
       // gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
       // gl.enableVertexAttribArray(aNormalPointer);
 
-      // Draw the cube
-      gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
-      gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_BYTE, 0);
+      // // Draw the cube
+      // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      // gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_BYTE, 0);
 
+
+
+
+
+      // var key2VerticesBuffer = gl.createBuffer();
+      // gl.bindBuffer(gl.ARRAY_BUFFER, key2VerticesBuffer);
+      // gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key2Vertices), gl.STATIC_DRAW);
+      // gl.vertexAttribPointer(aPositionPointer, 4, gl.FLOAT, false, 0, 0);
+      // gl.enableVertexAttribArray(aPositionPointer);
+
+
+
+      // var indexBuffer = gl.createBuffer();
+      // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      // gl.bufferData(gl.ELEMENT_ARRAY_BUFFER, new Uint8Array(key2Indices), gl.STATIC_DRAW);
+
+      // var normalBuffer = gl.createBuffer();
+      // gl.bindBuffer(gl.ARRAY_BUFFER, normalBuffer);
+      // gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(key2Normals), gl.STATIC_DRAW);
+      // gl.vertexAttribPointer(aNormalPointer, 4, gl.FLOAT, false, 0, 0);
+      // gl.enableVertexAttribArray(aNormalPointer);
+
+      // // Draw the cube
+      // gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, indexBuffer);
+      // gl.drawElements(gl.TRIANGLES, key2Indices.length, gl.UNSIGNED_BYTE, 0);
     }
 
     function main() {
