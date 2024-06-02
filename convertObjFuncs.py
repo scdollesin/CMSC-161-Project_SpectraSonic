@@ -82,6 +82,8 @@ def computeNormal(triangle):
 
   return N
 
+
+# di gumagana huhu
 def fixNormals(keys):
   print("in fix")
   # for key in keys:
