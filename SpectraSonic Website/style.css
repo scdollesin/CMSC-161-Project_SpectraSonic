@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: "Bauhaus 93";
+    src: url("./Website assets/Bauhaus 93 Regular.ttf") format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+section{
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100vw;
+}
+
+nav{
+    padding: 5px 10px 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(50deg, #270F36 0%, #4C1D69 37%, #5E2482 68%, #712B9C 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    box-shadow: 0px 10px 20px #190a23;
+}
+
+.homepage{
+    background-image: url("./Website assets/homepage_background.png"), linear-gradient(to bottom, #270F36, #642B6B, #C86B98);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.title_description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+#mini_keyboard {
+    padding: 0px;
+    margin: -130px 0px 0px 0px;
+    width: 55%;
+    object-fit: cover;
+}
+
+.title_description h2{
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 96px;
+    color: white;
+    margin: 0;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+    
+}
+
+.title_description p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    color: white;
+    margin: 0;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.key_feature{
+    background-image: url("./Website assets/keys_page_background.png"), linear-gradient(to bottom, #270F36, #642B6B, #C86B98);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.key_feature_description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}   
+
+.key_feature_description h2{
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: white;
+    margin: 0;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.key_feature_description p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    margin: 0;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#with_and_without_rainbow {
+    padding: 0px;
+    margin: -75px 0px 0px 0px;
+    width: 70%;
+    object-fit: cover;
+}
+
+.connectivity_feature{
+    background-image: url("./Website assets/connectivity_page_background.png"), linear-gradient(to bottom, #270F36, #642B6B, #C86B98);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.connectivity_feature_description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}   
+
+.connectivity_feature_description h2{
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: white;
+    margin: 0;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.connectivity_feature_description p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    margin: 0;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#ipad_keyboard {
+    padding: 0px;
+    margin: -10px 40px 0px 0px;
+    width: 90%;
+    object-fit: cover;
+    filter: brightness(1.5);
+}
+.versatility_feature{
+    background-image: url("./Website assets/versatility_page_background.png"), linear-gradient(to bottom, #270F36, #642B6B, #C86B98);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.versatility_feature_description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}   
+
+.versatility_feature_description h2{
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 36px;
+    color: white;
+    margin: 0;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.versatility_feature_description p{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: white;
+    margin: 0;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.view_demo{
+    background-image: url("./Website assets/view_demo_background.png"), linear-gradient(to bottom, #270F36, #642B6B, #C86B98);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#headphone_keyboard {
+    padding: 0px;
+    margin: 10px 40px 0px 0px;
+    width: 75%;
+    object-fit: cover;
+    filter: brightness(1.5);
+}
+
+nav .logo{
+    padding: 5px 10px 5px 10px;
+}
+
+nav .logo h1{
+    font-family: "Bauhaus 93", sans-serif;
+    font-size: 20px;
+    background-image: linear-gradient(80deg, #640D6B, #B51B75, #E65C19, #F8D082);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 100%;
+}
+
+nav .navigations{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav .navigations li{
+    padding: 2px 10px 2px 10px;
+}
+
+nav .navigations li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+}
+
+#nav_button{
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-size: 12px;
+    color: #270F36;
+    background-image: linear-gradient(80deg, #640D6B, #B51B75, #E65C19, #F8D082);
+    padding: 15px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 15px;
+}
+
+#view_demo_button{
+    font-family: 'Bruno Ace SC', sans-serif;
+    font-size: 25px;
+    color: #270F36;
+    background-image: linear-gradient(80deg, #640D6B, #B51B75, #E65C19, #F8D082);
+    padding: 15px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 15px;
+    
+}
