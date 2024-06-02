@@ -5,9 +5,13 @@ def initializeArray(arr, ):  # replace ["00", "00", "00"] to [00, 00, 00]
   for i in range(len(arr)):
     arr[i] = float(arr[i])
 
-def makeNewNormals(newArr, oldArr):
+def makeNewNormals(newArr, oldArr, count):
   for i in range(len(newArr)):
-    newArr[i] = oldArr[newArr[i]].copy()
+    for j in range(3):
+      #if count == 0: print(newArr[i][j], end=" -> ")
+      newArr[i][j] = oldArr[newArr[i][j]].copy()
+      #if count == 0: print(newArr[i][j])
+      
 
 def appendOToObj(filename):
   f = open(filename, "a")
@@ -38,9 +42,9 @@ def removeOFromObj(filename): #code taken from https://stackoverflow.com/questio
         file.seek(pos, os.SEEK_SET)
         file.truncate()
 
-inputFile = "model/buttons.obj"
-outputFile = "convertedKeys/buttons.txt"
-varName = "button"
+inputFile = "model/white-keys-3 copy.obj"
+outputFile = "convertedKeys/test.txt"
+varName = "whitekey"
 
 appendOToObj(inputFile)
 
@@ -89,13 +93,17 @@ for line in f:
   elif raw[0] == "f":
     arr = fArr
     raw.remove(raw[0])
+    vnormArr = []
 
     for i in range(len(raw)):      #for each "00//11"
       get = raw[i].split("//")    # get = ["00", "11"]
       raw[i] = get[0]             # replace "00//11" with "00"
 
-      # newNormalArr.append(int(get[1]) - vnAccumulate - 1)
-    
+      vnormArr.append(int(get[1]) - vnAccumulate - 1)
+
+    newNormalArr.append(vnormArr.copy())
+    vnormArr.clear()
+
     initializeArray(raw)          # replace "00" with 00
 
     #blender indices accumulate when there's a new object
@@ -116,7 +124,7 @@ for line in f:
     tempKey.append(vArr.copy())     #values of one key
     tempKey.append(vnArr.copy())
     tempKey.append(fArr.copy())
-    # tempKey.append(newNormalArr.copy())
+    tempKey.append(newNormalArr.copy())
 
     keys.append(tempKey.copy())     #store current key in an array of keys
 
@@ -124,12 +132,47 @@ for line in f:
     vArr.clear()
     vnArr.clear()
     fArr.clear()
-    # newNormalArr.clear()
+    newNormalArr.clear()
 
   else:
     continue
 
-print(keys[1])
+# for i in keys[1]:
+#   for j in i:
+#     print(j, end=",  ")
+#   print("\n\n")
+
+for key in keys:
+  #duplicate shared vertices
+  lookuptb = {}
+  normalsfinal = []
+
+  # 0 = vertices 1 = normals 2 = vertex indices 3 = normal indices 
+  if (len(key[2]) == len(key[3])):
+    for i in range(len(key[2])):
+      for j in range(3):
+        v = key[2][i][j]
+        n = key[3][i][j]
+        pair = [v,n]
+
+        if v not in lookuptb:
+          lookuptb[v] = n
+          #print("lookuptb[",v,",",n,"] = ", key[1][n])
+        else:
+          #print(pair)
+          key[0].append(key[0][int(v)].copy())
+          newV = len(key[0])-1
+          key[2][i][j] = newV
+          #print(v," -> ",newV," = ",key[2][i][j])
+          lookuptb[newV] = n
+
+  numvert = len(key[0]) #for every vertex
+  for i in range(numvert):
+    #print(i,":",lookuptb[i], end=" >>> ")  
+    normalsfinal.append(key[1][lookuptb[i]])  #append equivalent normal from lookuptable
+    #print(normalsfinal[i])
+
+  key[3] = normalsfinal
 
 o = open(outputFile, "w")
 
