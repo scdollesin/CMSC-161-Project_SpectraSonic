@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SpectraSonic: Your Interactive Keyboard Companion in Creating Vibrant Musical Worlds</title>
     <link rel="stylesheet" href="./style.css">
+    <script>
+        function openDemo() { window.open("../PROJECT.html"); }
+    </script>
 </head>
 
 <body>
@@ -20,7 +23,7 @@
                 <li><a href="#key_feature_id">Keys</a></li>
                 <li><a href="#connectivity_feature_id">Connectivity</a></li>
                 <li><a href="#versatility_feature_id">Versatility</a></li>
-                <li><button id="nav_button">Make a Beat</button></li>
+                <li><button id="nav_button" onclick="openDemo()">Make a Beat</button></li>
             </ul>
         </nav>
         <section class="homepage" id="homepage_id">
@@ -62,11 +65,10 @@
         </section>
         <section class="view_demo" id="view_demo_id">
             <div class="view_demo_description">
-                <button id="view_demo_button">View Demo</button>
+                <button id="view_demo_button" onclick="openDemo()">View Demo</button>
             </div>
         </section>
     </div>
-
 </body>
 
 </html>

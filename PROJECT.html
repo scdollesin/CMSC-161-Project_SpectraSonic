@@ -4374,6 +4374,7 @@ document.addEventListener('keydown', function(event) {
         const note = keyNoteMap[key];
         // Play the audio for that note
         const audio = new Audio(`notes/${note}.mp3`); 
+        audio.volume = 1;
         audio.play();
 
     }
@@ -4383,7 +4384,7 @@ document.addEventListener('keydown', function(event) {
 
 </head>
 <body onload="main()" style="margin: 0;">
-  <canvas id="main_canvas" width="1600" height="800" style="border: 1px black solid; background-image: url('images/background3.png'); background-size: cover;"></canvas>
+  <canvas id="main_canvas" width="1530" height="723" style="border: 1px black solid; background-image: url('images/background5.png'); background-size: cover;"></canvas>
   <!-- Button to trigger collapse -->
  <!--  <br>
   <button onmousedown="startCollapse1()" onmouseup="endCollapse1()">Collapse 1</button>
