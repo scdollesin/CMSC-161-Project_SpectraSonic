@@ -1,8 +1,8 @@
 from convertObjFuncs import *
 
-inputFile = "model/buttons.obj"
-outputFile = "convertedKeys/buttons.txt"
-varName = "button"
+inputFile = "model/test.obj"
+outputFile = "convertedKeys/test.txt"
+varName = "test"
 
 appendOToObj(inputFile)
 
@@ -33,7 +33,7 @@ for line in f:
     arr = vArr
 
     raw.remove(raw[0])    # remove "v"
-    initializeArray(raw)
+    initializeArray(raw, "float")
     raw.append(1.0)       # -> [x, y, z, 1]
 
     arr.append(raw.copy())  #append array to vArr
@@ -43,7 +43,7 @@ for line in f:
     arr = vnArr
 
     raw.remove(raw[0])
-    initializeArray(raw)
+    initializeArray(raw, "float")
     raw.append(0)
 
     arr.append(raw.copy())  #append array to vnArr
@@ -58,12 +58,14 @@ for line in f:
 
       # newNormalArr.append(int(get[1]) - vnAccumulate - 1)
     
-    initializeArray(raw)          # replace "00" with 00
+    initializeArray(raw, "int")          # replace "00" with 00
+
+    # print(raw)
 
     #blender indices accumulate when there's a new object
     #the next two lines are for making the indices go back to 0 when there's a new key object
-    for i in range(len(raw)):
-      raw[i] = raw[i] - vAccumulate - 1 
+    # for i in range(len(raw)):
+    #   raw[i] = raw[i] - vAccumulate - 1 
 
     arr.append(raw.copy())  # append to fArr
 
@@ -75,6 +77,7 @@ for line in f:
 
     # makeNewNormals(newNormalArr, vnArr)
 
+
     tempKey.append(vArr.copy())     #values of one key
     tempKey.append(vnArr.copy())
     tempKey.append(fArr.copy())
@@ -82,27 +85,48 @@ for line in f:
 
     keys.append(tempKey.copy())     #store current key in an array of keys
 
+
     tempKey.clear()
     vArr.clear()
     vnArr.clear()
     fArr.clear()
+
+    print("appended")
     # newNormalArr.clear()
 
   else:
     continue
 
 f.close()
+# print(keys[0][2])
 
-keys.pop(0)
+# print((keys[0][2]))
+# keys.pop(0)
 
+# print("in try: " + str(len(keys)))
+
+# print(f'len of vertices: {len(keys[1][0])}')
+
+# for key in keys:
+#   print("key")
+#   for array in key:
+#     print("array")
+#     for coord in key:
+#       type = "coord"
+#       # if coord == array[0]: type = "vertices:"
+#       # elif coord == array[1]: type = "normals"
+#       # elif coord == array[2]: type = "indices"
+#       print(f"{type}:")
+#       print(coord)
+print(f'len in try: {len(keys)}')
 fixNormals(keys)
 
 # o = open(outputFile, "w")
 
 # count = 0
 # for key in keys:
-#   if key == keys[0]:
-#     continue
+#   # if key == keys[0]:
+#   #   continue
 
 #   for i in key:
 #     type = ""
