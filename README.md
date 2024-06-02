@@ -19,3 +19,8 @@ Samantha Shane Dollesin
 * HTML
 * CSS
 * Desmos
+
+## Technologies Used
+1. Go to `SpectraSonic Website` folder
+2. Open `index.html` file
+3. Scroll down the website and click `View Demo` or Click `Make a Beat` in the Navigation bar
